@@ -1,0 +1,31 @@
+
+.btnAddFav {
+    border-radius: 0;    
+    background-color: #222;  
+    color: #ffffff;
+    padding: 6px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.btnDownload{
+    border-radius: 0;    
+    background-color: #222;  
+    color: #ffffff;
+    padding: 6px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.btnAddFav:hover {
+    background-color: #333;
+}
+
+.btnDownload:hover {
+    background-color: #333; 
+}
+
+.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
