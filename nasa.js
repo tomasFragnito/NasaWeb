@@ -114,7 +114,7 @@ export class Nasa{
         const ls = localStorage.getItem(key);
 
         if (!ls) {
-            return [];
+            return null;
         } else {
             return JSON.parse(ls);
         } 

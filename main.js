@@ -8,6 +8,8 @@ const dataNasaImg = document.getElementById("dataNasaImg");
 
 const loaderWrapper = document.getElementById("loaderWrapper");
 
+const textSelectDate = document.createElement("h3");
+
 btnSearch.addEventListener("click", searchNasa);
 
 function showLoader() {
@@ -40,14 +42,17 @@ document.addEventListener("DOMContentLoaded", async () => {
     showLoader(); //loader ON
     hideData();
 
-    if (last === "[]") {
-        // No existe en localstorage, guardar lo que hay en el input
-        const nasa = await Nasa.getDataImg(inputDate.value);
-        Nasa.setLocalStorage("lastNasa", nasa);
-        nasa.createHtml("dataNasa");
+    const divInputs = document.getElementById("inputH3");
+
+    if (last === null) {
+        // primera vez sin datos
+        textSelectDate.textContent = "Select a Date";
+        divInputs.append(textSelectDate);
+
     } else {
-        // Si existe en localstorage lo mostra
+
         const nasa = new Nasa(last.date, last.explanation, last.title, last.img);
+
         inputDate.value = last.date;
         nasa.createHtml("dataNasa");
     }
@@ -59,6 +64,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 async function searchNasa() {
     showLoader(); //loader ON
     hideData();
+
+    textSelectDate.remove();
 
     const nasa = await Nasa.getDataImg(inputDate.value);
     Nasa.setLocalStorage("lastNasa", nasa); //busca el ultimo guardado
