@@ -1,9 +1,11 @@
+import { truncateText } from "./favs.js";
 const API_KEY = "bjlBogwWksDenq5vC2Aj3Ft4afGccbxN0hNa7f40";
 
 export class Nasa{
     constructor(date,explanation,title,img){
         this.date = date;
-        this.explanation = explanation;
+        this.explanation = explanation; // TEXTO LARGO
+        this.shortExplanation = truncateText(explanation, 470); // TEXTO CORTO
         this.title = title;
         this.img = img;
         this.fav = false;
@@ -58,7 +60,7 @@ export class Nasa{
         img.alt = this.title;
         img.classList.add("imgNasa"); 
 
-        dataNasa.append(img,title,date,explanation,btnAddFav,btnDownload);
+        dataNasa.append(img,title,date,explanation,btnAddFav);
     }
 
     static isInFav(date) {
@@ -81,7 +83,7 @@ export class Nasa{
         date.textContent = this.date;
 
         const explanation = document.createElement("p");
-        explanation.textContent = this.explanation;
+        explanation.textContent = this.shortExplanation;
 
         const footer = document.createElement("div");
         footer.classList.add("cardFooter");
@@ -90,11 +92,19 @@ export class Nasa{
         btnDelete.classList.add("btnDelete");
         btnDelete.textContent = "Delete";
 
-        footer.appendChild(btnDelete);
+        const btnSee = document.createElement("button");
+        btnSee.classList.add("btnSee");
+        btnSee.textContent = "See";
+
+        footer.append(btnDelete, btnSee);
 
         btnDelete.addEventListener("click", () => {
             this.deleteFav();
             card.remove();
+        });
+
+        btnSee.addEventListener("click", () => {
+            Nasa.openModal(this);
         });
         
         card.append(img, title, date, explanation, footer);
@@ -172,4 +182,37 @@ export class Nasa{
         }
     }
 
+    static openModal(nasa){
+        let modal = document.getElementById("modalNasa");
+
+        if (!modal) {
+            modal = document.createElement("div");
+            modal.id = "modalNasa";
+            modal.innerHTML = `
+                <div class="modalContent">
+                    <button class="modalClose">✖</button>
+                    <img />
+                    <h3></h3>
+                    <p class="date"></p>
+                    <p class="explanation"></p>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+
+        modal.querySelector("img").src = nasa.img;
+        modal.querySelector("h3").textContent = nasa.title;
+        modal.querySelector(".date").textContent = nasa.date;
+        modal.querySelector(".explanation").textContent = nasa.explanation;
+
+        modal.classList.add("show");
+
+        modal.querySelector(".modalClose").onclick = () => {
+            modal.classList.remove("show");
+        };
+
+        modal.onclick = (e) => {
+            if (e.target === modal) modal.classList.remove("show");
+        };
+    }
 }
