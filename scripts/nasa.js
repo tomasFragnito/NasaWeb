@@ -67,7 +67,7 @@ export class Nasa{
     }
 
     static isInFav(date) {
-        const favs = Nasa.getLocalStorage("fav");
+        const favs = Nasa.getLocalStorage(date);
         return favs.some(item => item.date === date);
     }
 
@@ -123,7 +123,7 @@ export class Nasa{
         return new Nasa(data.date, data.explanation, data.title, data.url);
     }
 
-    static getLocalStorage(key){
+    static getLocalStorage1(key){
         const ls = localStorage.getItem(key);
 
         if (!ls) {
@@ -131,6 +131,11 @@ export class Nasa{
         } else {
             return JSON.parse(ls);
         } 
+    }
+
+    static getLocalStorage(key){
+        const ls = localStorage.getItem(key);
+        return ls ? JSON.parse(ls) : [];
     }
 
     static setLocalStorage(key,data){
