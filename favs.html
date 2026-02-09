@@ -4,21 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nasa Web</title>
-    <link rel="stylesheet" href="./responsive.css">
-    <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./favs.css">
-    <link rel="stylesheet" href="./modalCard.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/favorites.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="css/inputs.css">
+    <link rel="stylesheet" href="css/images.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/favs.css">
+
 </head>
 <body>
     <header>
         <h1>Favorites Nasasistico</h1>
     </header>
     <main>
-        <div id="favsDiv">
+        <button id="prevBtn" class="scrollBtn">◀</button>
+        <div id="favsContainer">
+            <div id="favsDiv"></div>
+        </div>
+        <button id="nextBtn" class="scrollBtn">▶</button>
 
         </div>
         <div id="inputs">
-            <a href="./index.html">Inicio</a> 
+            <a href="./index.html">Menu</a> 
         </div>
     </main>        
 
@@ -32,6 +44,6 @@
 
     </footer>
 
-    <script type="module" src="./favs.js"></script>
+    <script type="module" src="./scripts/favs.js"></script>
 </body>
 </html>

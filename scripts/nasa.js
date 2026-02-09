@@ -18,18 +18,21 @@ export class Nasa{
 
         const date = document.createElement("p");
         date.textContent = this.date;
+        date.classList.add("fadeInUp");
 
         const explanation = document.createElement("p");
         explanation.textContent = this.explanation;
+        explanation.classList.add("fadeInUp");
 
         const title = document.createElement("h3");
         title.textContent = this.title;
+        title.classList.add("fadeInUp");
 
         const btnAddFav = document.createElement("button");
-        btnAddFav.classList.add("btnAddFav");
+        btnAddFav.classList.add("btnAddFav", "fadeInUp");
         
         if (Nasa.isInFav(this.date)) {
-            btnAddFav.textContent = "Added";
+            btnAddFav.textContent = "Added ⭐";
             btnAddFav.disabled = true;
             btnAddFav.classList.add("disabled");
         } else {
@@ -42,7 +45,7 @@ export class Nasa{
             if (added) {
                 btnAddFav.disabled = true;
                 btnAddFav.classList.add("disabled");
-                btnAddFav.textContent = "Added";
+                btnAddFav.textContent = "Added ⭐";
             }
         });
 
@@ -58,7 +61,7 @@ export class Nasa{
 
         img.src = this.img; 
         img.alt = this.title;
-        img.classList.add("imgNasa"); 
+        img.classList.add("imgNasa", "fadeInUp"); 
 
         dataNasa.append(img,title,date,explanation,btnAddFav);
     }

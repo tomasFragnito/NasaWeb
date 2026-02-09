@@ -1,0 +1,33 @@
+/* ================= IMAGES ================= */
+.imgNasa {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.5s ease; /* suaviza animación */
+    cursor: pointer;
+    z-index: 1;
+}
+
+.imgNasa:hover {
+    transform: scale(1.08);
+    z-index: 10;
+}
+
+#dataNasaImg img {
+    width: clamp(220px, 30vw, 320px);
+    height: clamp(160px, 22vw, 220px);
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.hiddenData {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.buttonsRow {
+    display: flex;
+    gap: 12px;
+}

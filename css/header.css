@@ -1,0 +1,17 @@
+/* ================= HEADER ================= */
+header {
+    grid-row: 1/2;
+    grid-column: 1/4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 {
+    font-size: clamp(1.4rem, 2vw, 2.2rem);
+    letter-spacing: 10px;
+    font-weight: 600;
+    margin: 0;
+    text-shadow: 0 0 10px rgba(255,255,255,0.3);
+    text-align: center;
+}

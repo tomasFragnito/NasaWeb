@@ -1,0 +1,75 @@
+/* ================= FAVORITES ================= */
+
+#favsContainer {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#favsDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start; /* IMPORTANTE */
+    gap: 16px;
+
+    width: 90%;
+    padding: 20px 16px; /* padding reducido para mobile */
+    margin: 0 auto;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-snap-type: x mandatory;
+    scroll-padding: 16px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Scrollbar */
+#favsDiv::-webkit-scrollbar {
+    height: 10px;
+}
+
+#favsDiv::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 10px;
+}
+
+/* Cards responsivas */
+#favsDiv .card {
+    flex: 0 0 clamp(200px, 70vw, 240px);
+    scroll-snap-align: center;
+}
+
+/* Elimina empujes artificiales */
+#favsDiv .card:first-child,
+#favsDiv .card:last-child {
+    margin: 0 !important;
+}
+
+/* Botones de scroll */
+.scrollBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 60px;
+    background-color: rgba(0,0,0,0.5);
+    color: #ffffff;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.scrollBtn:hover {
+    transform: translateY(-50%) !important;
+    background-color: rgba(0,0,0,0.5) !important;
+    scale: 1 !important;
+}
+
+#prevBtn { left: 0; }
+#nextBtn { right: 0; }
+

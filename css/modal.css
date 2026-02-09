@@ -1,5 +1,5 @@
-/* MODAL */
-#modalNasa{
+/* ================= MODAL ================= */
+#modalNasa {
     position: fixed;
     inset: 0;
     background: rgba(0,0,0,0.75);
@@ -12,12 +12,12 @@
     transition: opacity .3s;
 }
 
-#modalNasa.show{
+#modalNasa.show {
     opacity: 1;
     pointer-events: auto;
 }
 
-.modalContent{
+.modalContent {
     background: #1e1e1e;
     max-width: 600px;
     width: 90%;
@@ -30,28 +30,16 @@
     gap: 10px;
 }
 
-.modalContent img{
+.modalContent img {
     width: 100%;
     border-radius: 6px;
 }
 
-.modalClose{
+.modalClose {
     align-self: flex-end;
     background: transparent;
     color: #ffffff;
     border: none;
     font-size: 18px;
     cursor: pointer;
-}
-
-.btnSee{
-    background: #444;
-    color: #fff;
-    border: none;
-    padding: 6px 14px;
-    cursor: pointer;
-}
-
-.btnSee:hover{
-    background: #666;
 }

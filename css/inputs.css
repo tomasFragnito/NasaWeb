@@ -1,0 +1,35 @@
+/* ================= INPUTS ================= */
+#inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 10px;
+}
+
+#inputs h3 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+#inputs input[type="date"] {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: none;
+}
+
+#inputs button,
+#inputs a {
+    padding: 8px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    background-color: #444;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#inputs button:hover,
+#inputs a:hover {
+    background-color: #666;
+}

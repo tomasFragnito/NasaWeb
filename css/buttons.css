@@ -1,0 +1,54 @@
+/* ================= BUTTONS ================= */
+.btnAddFav,
+.btnDownload,
+.btnDelete,
+.btnSee {
+    padding: 6px 14px;
+    border: none;
+    cursor: pointer;
+}
+
+.btnAddFav,
+.btnDownload {
+    background-color: #222;
+    color: #fff;
+    border-radius: 0;
+    padding: 6px 20px;
+}
+
+.btnAddFav:hover,
+.btnDownload:hover {
+    background-color: #333;
+}
+
+.btnDelete {
+    background: rgb(138, 63, 63);
+    color: #fff;
+}
+
+.btnSee {
+    background: #444;
+    color: #fff;
+}
+
+.btnSee:hover {
+    background: #666;
+}
+
+.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+button:hover,
+a:hover {
+    transform: scale(1.05);
+}
+
+button:disabled,
+button.disabled {
+    background-color: #222222 !important;
+    color: #666 !important;
+    cursor: not-allowed;
+    opacity: 1; 
+}
