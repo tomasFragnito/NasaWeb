@@ -1,0 +1,17 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 100vh;
+    position: relative;
+}
+
+main {
+    height: 100%;
+}
+
+#inputs {
+    margin-top: -45px;
+}

@@ -1,0 +1,97 @@
+/* ================= FAVORITES MOBILE ================= */
+@media (max-width: 600px) {
+
+    /* ===== BODY Y MAIN ===== */
+    html, body {
+        font-size: 14px;
+        height: 100%;
+        overflow-y: auto; /* permite scroll vertical si es necesario */
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 15px;
+        width: 100%;
+        position: relative;
+        padding: 10px 0;
+    }
+
+    header {
+        font-size: 1.4rem;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    /* ===== FAVORITES CARDS ===== */
+    #favsContainer {
+        width: 100%;
+        padding: 0 5px;
+        overflow-x: auto;
+        overflow-y: auto;
+    }
+
+    #favsDiv {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        overflow-x: visible;
+        overflow-y: visible;
+        width: 100%;
+    }
+
+    #favsDiv .card {
+        width: 90%;
+        max-width: 300px;
+        height: auto;
+        flex: 0 0 auto;
+    }
+
+    /* Botones de scroll desactivados en móvil */
+    .scrollBtn {
+        display: none;
+    }
+
+    /* ===== INPUTS ===== */
+    #inputs {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+    }
+
+    #inputs a {
+        padding: 10px 20px;
+        font-size: 1rem;
+        text-align: center;
+        width: 90%;
+        display: block;
+        background-color: #444;
+        color: #fff;
+        border-radius: 6px;
+        text-decoration: none;
+    }
+
+    #inputs a:hover {
+        background-color: #666;
+    }
+
+    /* ===== FOOTER Y NAV ===== */
+    footer, nav, aside {
+        display: none;
+    }
+
+}

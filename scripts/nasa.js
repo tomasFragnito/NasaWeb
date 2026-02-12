@@ -5,7 +5,7 @@ export class Nasa{
     constructor(date,explanation,title,img){
         this.date = date;
         this.explanation = explanation; // TEXTO LARGO
-        this.shortExplanation = truncateText(explanation, 470); // TEXTO CORTO
+        this.shortExplanation = truncateText(explanation, 400); // TEXTO CORTO
         this.title = title;
         this.img = img;
         this.fav = false;
